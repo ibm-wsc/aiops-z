@@ -1,6 +1,6 @@
 site_name: AIOps with IBM Z and LinuxONE
-repo_url: https://github.com/mmondics/aiops-z/
-site_url: https://mmondics.github.io/aiops-z/
+repo_url: https://github.com/ibm-wsc/aiops-z/
+site_url: https://ibm-wsc.github.io/aiops-z/
 edit_uri: edit/main/docs
 
 nav:

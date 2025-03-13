@@ -5,14 +5,19 @@ The virtual machines seem to work best in a Firefox browser on your local workst
 1. Go here: [here](TBD)
 2. Log in with your IBM ID.
    1. If you don't already have an IBM ID, you will need to create one [here](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776&target=https%3A%2F%2Flogin.ibm.com%2Foidc%2Fendpoint%2Fdefault%2Fauthorize%3FqsId%3Db9977aed-1e6b-4321-9b43-ee4365544452%26client_id%3DODllMDk4YzItMjgxOC00)
-3. When prompted, enter the workshop password: `p@ssw0rd` (that's a zero)
+3. When prompted, enter the workshop password provided by your instructor. For security reasons, this password is not listed here.
 4. If prompted, log into the Windows virtual machine with password: `IBMDem0s` (that's a zero). You may already be logged in when first accessing the VM.
 
 ## Links to platforms
-- OpenShift Cluster URL: <https://console-openshift-console.apps.atsocpd1.dmz/dashboards>
-- Instana URL: <https://unit0-wsc.lcsins01.dmz>
-- Turbonomic URL: <https://nginx-turbonomic.apps.x2pn.dmz/app/>
-- IBM Cloud Pak for AIOps URL: <https://cpd-cp4aiops.apps.x2pn.dmz/zen/#/homepage>
+
+!!! Tip
+
+    These URLs are given within each lab section at the appropriate place.  They are repeated here for your convenience, in case you accidentally close your browser tab or window and lose your session- you can use the links here to easily resume your interrupted session.  
+
+- OpenShift Cluster URL: [https://console-openshift-console.apps.atsocpd1.dmz/dashboards](https://console-openshift-console.apps.atsocpd1.dmz/dashboards){target=wsc_ocpconsole}
+- Instana URL: [https://unit0-wsc.lcsins01.dmz](https://unit0-wsc.lcsins01.dmz){target=wsc_instana}
+- Turbonomic URL: [https://nginx-turbonomic.apps.x2pn.dmz/app/](https://nginx-turbonomic.apps.x2pn.dmz/app/){target=wsc_turbo}
+- IBM Cloud Pak for AIOps URL: [https://cpd-cp4aiops.apps.x2pn.dmz/zen/#/homepage](https://cpd-cp4aiops.apps.x2pn.dmz/zen/#/homepage){target=wsc_cp4aiops}
 
 If you cannot access the webpage for any of the platforms above, check that the Cisco Secure Client VPN is logged in on the Virtual Machine. If it is no longer logged in, please let the lab administrator know.
 
@@ -21,6 +26,10 @@ Please do not log off or reboot the Virtual Machine, as that will disconnect the
 ## OpenShift, Instana, Turbonomic, and CP4AIOps credentials:
 
 Usernames and passwords are the same for all of the platforms used in this tutorial.
+
+!!! Note "second username for the Turbonomic lab"
+
+    The Turbonomic lab uses two userids- the *usernn* listed below, plus a second userid *usernn-actions*, where 'nn' is your student number.  The password for this second userid is the same as that used for *usernn*. The Turbonomic lab instructions will tell you when to use each of these two userids.
 
 | Environment ID | NN | Username | Password |
 |-----|----|--------------------|--------------------|
