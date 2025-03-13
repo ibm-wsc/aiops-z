@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://mmondics.github.io/aiops-z/labs/cp4aiops-lab/">
+        <link rel="canonical" href="https://ibm-wsc.github.io/aiops-z/labs/cp4aiops-lab/">
       
       
         <link rel="prev" href="../turbonomic-lab/">
@@ -176,7 +176,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/mmondics/aiops-z/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/ibm-wsc/aiops-z/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -221,7 +221,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/mmondics/aiops-z/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/ibm-wsc/aiops-z/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -768,19 +768,23 @@
 <h1 id="aiops-with-ibm-z-and-linuxone">AIOps with IBM Z and LinuxONE<a class="headerlink" href="#aiops-with-ibm-z-and-linuxone" title="Permanent link">&para;</a></h1>
 <h2 id="ibm-cloud-pak-for-aiops">IBM Cloud Pak for AIOps<a class="headerlink" href="#ibm-cloud-pak-for-aiops" title="Permanent link">&para;</a></h2>
 <h3 id="introduce-an-error-into-your-sample-application">Introduce an Error into your Sample Application<a class="headerlink" href="#introduce-an-error-into-your-sample-application" title="Permanent link">&para;</a></h3>
-<p>In the following section, you will be using IBM Cloud Pak for AIOps to solve an issue in the NodeJS and Postgresql sample application running in the <code>userNN-project</code> OpenShift namespace. In this section, you will introduce the error so you can solve it later.</p>
+<p>In the following section, you will be using IBM Cloud Pak for AIOps to solve an issue in the NodeJS and Postgresql sample application running in your <em>userNN-project</em> OpenShift namespace. In this section, you will introduce an error that you will solve later in the lab.</p>
 <ol>
 <li>
-<p><strong>In the OpenShift console under the developer perspective, navigate to your <code>userNN-project</code> namespace topology, click the Postgresql icon, then click the <code>postgresql-userNN</code> deployment hyperlink.</strong></p>
+<p><strong>In the OpenShift console, under the developer perspective, navigate to your <em>userNN-project</em> namespace topology (1), click the Postgresql icon (2), and then click the <em>postgresql-userNN</em> deployment hyperlink (3).</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You may still have your OpenShift Web Console tab open from the Instana or Turbonomic labs.  If not, you can find the URL again on the <a href="../../access/" target="wsc_envaccess">Environment Access</a> page.</p>
+</div>
 <p><img alt="ocp-postgresql" src="../../images/ocp-postgresql.png" /></p>
 </li>
 <li>
-<p><strong>Under the Environment tab, change the value for <code>POSTGRESQL_DATABASE</code> from <code>my_data</code> to <code>my_data-error</code>. Click save at the bottom of the page.</strong></p>
+<p><strong>Under the <em>Environment</em> tab (1), change the value for <em>POSTGRESQL_DATABASE</em> from <em>my_data</em> to <em>my_data-error</em> (2). Click save at the bottom of the page.</strong></p>
 <p><img alt="ocp-postgresql2" src="../../images/ocp-postgresql2.png" /></p>
 <p>Your NodeJS pod will shortly become unready as it is no longer able to find the correct Postgresql database.</p>
 </li>
 <li>
-<p><strong>Try to access the frontend application with the small hyperlink button on the NodeJS icon.</strong></p>
+<p><strong>Try to access the frontend application with the small hyperlink button (1) on the NodeJS icon.</strong></p>
 <p><img alt="app-broken" src="../../images/app-broken.png" /></p>
 <p>You should receive an error page similar to the following:</p>
 <p><img alt="app-broken2" src="../../images/app-broken2.png" /></p>
@@ -793,13 +797,16 @@
 <h3 id="exploring-the-cp4aiops-console">Exploring the CP4AIOps Console<a class="headerlink" href="#exploring-the-cp4aiops-console" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p><strong>Navigate to your IBM Cloud Pak for AIOps dashboard.</strong> You can find this address in the <a href="../../access/">Environment Access page</a>.</p>
+<p><strong>Navigate to your IBM Cloud Pak for AIOps dashboard at <a href="https://cpd-cp4aiops.apps.x2pn.dmz/zen/#/homepage" target="wsc_cp4aiopsconsole">https://cpd-cp4aiops.apps.x2pn.dmz/zen/#/homepage</a>.</strong> </p>
+<p>Select <em>OpenShift Authentication</em> from the <em>Log in with</em> dropdown, then click the blue <em>Log in</em> button.</p>
 <p><img alt="cp4waiops-login" src="../../images/cp4waiops-login.png" /></p>
 </li>
 <li>
-<p><strong>In the dropdown for <code>Log in with</code>, make sure you have <code>OpenShift Authentication</code> selected, then select the <code>ldap-ats-wscdmz-wfwsldapcl01</code> option, and log in with your OpenShift credentials (i.e. <code>userNN</code>).</strong> Do not select the <code>kube:admin</code> option.</p>
-<p>You may be prompted to authorize access to a service account in the <code>cp4aiops</code> project. Select <strong>Allow selected permissions</strong> if prompted.</p>
+<p><strong>If presented with two choices in a <em>Log in with</em> box, as shown below, select the <code>ldap-ats-wscdmz-wfwsldapcl01</code> option, and log in with your usual lab credentials (i.e. <em>userNN</em>).</strong> </p>
+<p><img alt="cp4aiops-login-ldap" src="../../images/cp4aiops-login-ldap.png" /></p>
+<p>You may be prompted to authorize access to a service account in the <em>cp4aiops</em> project. Select <strong>Allow selected permissions</strong> if prompted.</p>
 <p>While navigating the CP4AIOps platform, you might be prompted to take a tour of certain features. Select "Maybe Later" - you can come back to these tours later if you wish by clicking the "Tours" button in the top-right of the page.</p>
+<p>After successful login, and dismissing any offers to take a tour, you should be at your CP4AIOps home page, which should look like this:</p>
 <p><img alt="cp4waiops-homepage" src="../../images/cp4waiops-homepage.png" /></p>
 <p>When you first open CP4AIOps, you are taken to the homepage that displays the most important information that you have access to. Depending on your credentials, different "widgets" will appear for you to see and act on.</p>
 <p>The terms and concepts on this homepage may seem foreign at first, but they will become clear throughout the rest of this tutorial. A good place to start is on the AIOps Insights page where you can see an overview of the CP4AIOps benefits.</p>
@@ -808,11 +815,12 @@
 <h4 id="aiops-insights">AIOps Insights<a class="headerlink" href="#aiops-insights" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>Expand the menu by clicking the button in the top-left corner of the page, then navigate to the AIOps Insights page.</strong></p>
+<p><strong>Choose the <em>AIOps Insights</em> option from the left-side menu.  It may be necessary to click the "hamburger-menu" button in the top-left corner of the page to bring the left-side menu into view.</strong></p>
+<p>You should reach a page similar to this:</p>
 <p><img alt="aiops-insights" src="../../images/aiops-insights.png" /></p>
-<p>On this page, you see visualizations of two of the main goals of CP4AIOps - Improved Mean Time to Restore (MTTR) and Reduction of Noise.</p>
+<p>On this page, you see visualizations of two of the main goals of CP4AIOps - improving problem resolution time (Mean Time to Restore) and reducing the "signal-to-noise ratio" from all of the monitoring data produced within your enterprise IT environment (Reduction of Noise).</p>
 <p><details>
-<summary>Mean Time to Resolution (MTTR) (click to expand)</summary></p>
+<summary>Mean Time to Restore (MTTR) (click to expand)</summary></p>
 <p>The total time period from the start of a failure to resolution. For business-critical applications, downtime of just a few minutes can mean thousands or millions of dollars' worth of lost revenue. IBM Cloud Pak for AIOps reduces MTTR by using AI-driven insights to recommend actions and runbooks to solve the issue more quickly.
 </details></p>
 <p><details>
@@ -826,7 +834,8 @@
 <h4 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>From the left-side menu, navigate to Define -&gt; Integrations.</strong></p>
+<p><strong>From the left-side menu, navigate to _Define -&gt; Integrations-.</strong></p>
+<p>You should see a page like this:</p>
 <p><img alt="integrations" src="../../images/integrations.png" /></p>
 <ul>
 <li>All the data, events, and metrics you see in CP4AIOps are coming from the Instana server you explored earlier in this tutorial. </li>
@@ -834,19 +843,24 @@
 <li>Slack is used for ChatOps to notify operations teams about incidents and ongoing remediation work.</li>
 </ul>
 <p>There are also two outbound connections - one for SSH connections, and one to an <a href="https://www.redhat.com/en/technologies/management/ansible">Ansible Automation Platform</a> server. These are both used to take remediation actions against target environments.</p>
-<p><em>Note: don't worry if the SSH and Ansible connections indicate an error. This seems to be a visual bug due to your userNN permissions.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don't worry if some of these integrations indicate an error.  The SSH and Ansible connections will show an error even though they are working- this appears to be caused by the permissions granted to your <em>userNN</em> roles in Cloud Pak for AIOps.  This does not adversely impact your lab.</p>
+<p>Regarding the error shown for the Instana integrations, this is caused by a recent problem that has very minimal impact on the lab that the instructors will debug and resolve later.  </p>
+</div>
 </li>
 </ol>
 <h4 id="resource-management">Resource Management<a class="headerlink" href="#resource-management" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>From the left-side menu, navigate to Operate -&gt; Resource Management.</strong></p>
+<p><strong>From the left-side menu, navigate to <em>Operate -&gt; Resource Management</em>.</strong></p>
+<p>You should see a screen similar to what is shown below:</p>
 <p><img alt="resource-management-2" src="../../images/resource-management-2.png" /></p>
-<p>Similar to Turbonomic, you will see that CP4AIOps integrated the Instana Application Perspectives.</p>
-<p>You will see that CP4AIOps integrated the Instana Application Perspectives.</p>
+<p>Similar to Turbonomic, CP4AIOps has integrated the Instana Application Perspectives.</p>
 </li>
 <li>
-<p><strong>Click the link for the robot-shop application.</strong></p>
+<p><strong>Click the link for the <em>robot-shop</em> application.</strong></p>
+<p>You will see a page like this:</p>
 <p><img alt="resource-management" src="../../images/resource-management.png" /></p>
 <p>You now have a scoped view of just the resources associated with the Robot Shop Microservices Application - all of the Kubernetes objects such as pods, services, and routes, but also the individual application components within the containers such as <code>.jar</code> files and even the API calls made to each endpoint. </p>
 <p>You can zoom in on the topology to better see the individual application components and relationships.</p>
@@ -856,96 +870,128 @@
 <h4 id="automations">Automations<a class="headerlink" href="#automations" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>From the left-side menu, navigate to Operate -&gt; Automations</strong>. If there are any filters applied, you can clear them by clicking the filter button and unchecking any that are applied.</p>
+<p><strong>From the left-side menu, navigate to <em>Operate -&gt; Automations</em></strong>. If there are any filters applied, you can clear them by clicking the filter button and unchecking any that are applied.</p>
 <p><img alt="automations-policies" src="../../images/automations-policies.png" /></p>
 <p>The automation tools - policies, runbooks, and actions - help you resolve incidents quickly by setting up and enabling an automatic response as situations arise.</p>
 <p><strong>Policies</strong> are rules that contain condition and action sets. They can be triggered to automatically promote events to alerts, reduce noise by grouping alerts into an incident, and assign runbooks to remediate alerts.</p>
 </li>
 <li>
-<p><strong>For example, find the Policy named <code>robot shop promote alert to incident</code>, and click it. In the new page that opens, click the "Specification" tab.</strong></p>
+<p><strong>For example, find the policy named <em>robot shop promote alert to incident</em>, and click it. In the new page that opens, click the <em>Specification</em> tab.</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the search bar to quickly find the <em>robot shop promote alert to incident</em> policy</p>
+</div>
 <p>This policy looks for alerts that match the tags <code>Value of:alert.summary</code> contains <code>POST /pay/{id} - Erroneous call rate is too high</code>. An alert matching this tag will be sent from Instana when Instana determines there has been a significant increase in the rate of erroneous calls to the Robot Shop application.</p>
 <p>The policy also states what should happen when the policy finds a matching alert. In this case, it will promote the alert to an incident that will notify specific users responsible for fixing the issue, or potentially automatically run a runbook made up of one or more actions that have been defined in CP4AIOps.</p>
 </li>
 <li>
-<p><strong>Navigate to the "Runbooks" tab on the Automations page.</strong></p>
+<p><strong>Navigate to the <em>Runbooks</em> tab on the <em>Automations</em> page.</strong></p>
+<p>You should see a page like this:</p>
 <p><img alt="automations-runbooks" src="../../images/automations-runbooks.png" /></p>
-<p><strong>Runbooks</strong> automate procedures thereby increasing the efficiency of IT operations processes. Runbooks are made up of one or more actions that can be taken against a target environment through either ssh or HTTP calls.</p>
-<p>You can also switch to the "Activities" tab to see all of the previous runbook usage.</p>
+<p><em>Runbooks</em> automate procedures, thereby increasing the efficiency of IT operations processes. Runbooks are made up of one or more actions that can be taken against a target environment through either ssh or HTTP calls.</p>
+<p>You can also switch to the <em>Activities</em> tab under the <em>Runbooks</em> tab to see all of the previous runbook usage.</p>
 </li>
 <li>
-<p><strong>Navigate to the "Actions" tab on the Automations page.</strong></p>
-<p><strong>Actions</strong> in runbooks are the collection of manual steps grouped into a single automated entity. An action improves runbook efficiency by automatically performing procedures and operations.</p>
+<p><strong>Navigate to the <em>Actions</em> tab on the <em>Automations</em> page.</strong></p>
+<p><em>Actions</em> in runbooks are the collection of manual steps grouped into a single automated entity. An action improves runbook efficiency by automatically performing procedures and operations.</p>
 </li>
 <li>
-<p><strong>For example, click the <code>Fix load deployment environment variable</code> action and then click the "Content" tab of the new window that pops up.</strong></p>
+<p><strong>For example, click the <em>Fix load deployment environment variable</em> action (1) and then click the <em>Content</em> tab (2) of the new window that pops up.</strong></p>
 <p><img alt="action-erroneous" src="../../images/action-erroneous.png" /></p>
-<p>This action enables CP4AIOps to <code>ssh</code> to a target server and run the proper <code>oc</code> commands to solve the issue.</p>
-<p>There are other alternatives to <code>ssh</code> - for example, HTTP API calls or Ansible automation playbooks.</p>
+<p>This action enables CP4AIOps to <em>ssh</em> to a target server and run the proper <em>oc</em> (OpenShift CLI) commands to solve the issue.</p>
+<p>There are other alternatives to <em>ssh</em> - for example, HTTP API calls or Ansible automation playbooks.</p>
 <p>Runbooks and actions can be associated with incidents so that whenever an incident is created that meets certain criteria, a runbook can automatically kick off problem remediation.</p>
 </li>
 </ol>
 <h4 id="incidents-and-alerts">Incidents and Alerts<a class="headerlink" href="#incidents-and-alerts" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>In the left-side menu, navigate to Operate -&gt; "Incidents".</strong></p>
+<p><strong>In the left-side menu, navigate to <em>Operate -&gt; Incidents</em>.</strong></p>
+<p>You'll get a page like this:</p>
 <p><img alt="incident-new" src="../../images/incidents.png" /></p>
-<p>Depending on what alerts are triggered at the time you go through the tutorial, the current incidents will look different.</p>
-<p>Incidents are where the IT Operators and administrators should focus their attention to either manually close incidents as they are generated or build actions and runbooks in order to remediate incidents automatically as they appear. </p>
+<p>Depending on what alerts are triggered at the time you go through this lab, the current incidents will look different.</p>
+<p>Incidents are where the IT operators and administrators should focus their attention to either manually close incidents as they are generated or build actions and runbooks in order to remediate incidents automatically as they appear. </p>
 </li>
 <li>
-<p><strong>Find the incident that begins with <code>userNN-project/nodejs-postgresql-example</code>, where <code>userNN</code> is your user number.</strong></p>
-<p><strong><em>Please be careful to select your correct incident. There is nothing stopping you from accidentally selecting another user's incident and closing it in the coming steps.</em></strong></p>
+<p><strong>Find the incident that begins with <em>userNN-project/nodejs-userNN</em>, where <em>userNN</em> is your user number.</strong></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Please be careful to select your correct incident. There is nothing stopping you from accidentally selecting another user's incident and closing it in the coming steps.</p>
+</div>
 <p><img alt="incident-view" src="../../images/incident-view.png" /></p>
 <p>The incident contains many pieces of information that can be used to more quickly remediate issues.</p>
 <ul>
 <li><em>Probable cause alerts</em> - CP4AIOps attempts to derive the root fault component, and the full scope of components that are affected by an incident</li>
-<li><em>Topology</em> - provides a view of the affected components so IT Operators can see the incident in context</li>
+<li><em>Topology</em> - provides a view of the affected components so IT Operators can see the incident in context. <strong>Note:</strong> the Topology for this application is not available at this time due to a recent problem. The instructors have not had a chance to debug this yet. You will not see the topology of this event as a result.  It should have looked similar to what is in the above screenshot. </li>
 <li><em>Assignees</em> - you can either manually assign incidents to team members to resolve, or CP4AIOps can assign people or teams automatically if a policy is configured to do so</li>
 <li><em>Impacted Applications</em> - any business applications that CP4AIOps identifies as impacted by the incident</li>
 <li><em>Recommended runbooks</em> - if CP4AIOps correlates the incident with others from the past that were resolved with certain playbooks, they will be recommended</li>
 </ul>
 </li>
 <li>
-<p>There seems to be a problem with the NodeJS and Postgresql application running in your <code>userNN-project</code> OpenShift project. <strong>Navigate to the OpenShift console in the developer perspective and try to access the frontend application with the small hyperlink button on the NodeJS icon.</strong></p>
+<p>There seems to be a problem with the NodeJS and Postgresql application running in your <code>userNN-project</code> OpenShift project. </p>
+<p><strong>In your OpenShift web console, in the topology view of your <em>userNN-project</em> within the <em>Developer</em> perspective, try to access the frontend application with the small hyperlink button (1) on the NodeJS icon.</strong></p>
 <p><img alt="app-broken" src="../../images/app-broken.png" /></p>
 <p>You should receive an error page similar to the following:</p>
 <p><img alt="app-broken2" src="../../images/app-broken2.png" /></p>
 <p>Cloud Pak for AIOps has identified this error as an <em>incident</em>, and has provided a runbook to fix it.</p>
 </li>
 <li>
-<p><strong>Back in the CP4AIOps incident at the bottom of the page, click the Run button associated with the <code>Fix userNN postgresql (ssh)</code> runbook.</strong></p>
+<p><strong>Back in the CP4AIOps incident at the bottom of the page, click the Run button (1) associated with the <em>Fix userNN postgresql (ssh)</em> runbook.</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You may need to scroll down within the incident to find the runbook associated with the incident.</p>
+</div>
+<p><img alt="cp4aiops-incident-run-runbook" src="../../images/cp4aiops-incident-run-runbook.png" /></p>
+<p>After clicking the <em>Run</em> button you should see a page like this:</p>
 <p><img alt="runbook-new" src="../../images/runbook-new.png" /></p>
 <p>This <em>runbook</em> is made up of four separate <em>actions</em>. Each action is a bash command issued through an SSH connection. It is not required that all commands be of the same type. For example, one step could be a bash command while the second could be an Ansible playbook or an API call.</p>
 <ul>
 <li>First, the runbook will log into the OpenShift cluster from an Ubuntu server via an SSH connection.</li>
-<li>Second, it will check if the <code>POSTGRESQL_DATABASE</code> environment variable is properly set.</li>
-<li>Third, it will remediate the error. The remediation for this error is to edit the Postgresql deployment's environment variable to the correct database name of <code>my_data</code>, rather than <code>my_data-error</code>.</li>
+<li>Second, it will check if the <em>POSTGRESQL_DATABASE</em> environment variable is properly set.</li>
+<li>Third, it will remediate the error. The remediation for this error is to edit the Postgresql deployment's environment variable to the correct database name of <em>my_data</em>, rather than <em>my_data-error</em>.</li>
 <li>Finally, it will check the environment variable again to confirm that it was properly changed.</li>
 </ul>
 </li>
 <li>
-<p><strong>Start the runbook by entering the variables for <code>user</code>, <code>ocp_username</code>, <code>ocp_password</code>, and <code>ocp_project</code>.</strong></p>
+<p><strong>Prior to running the actions, begin by entering four parameter values in the <em>Details</em> pane on the right- those for <em>user</em>, <em>ocp_username</em>, <em>ocp_password</em>, and <em>ocp_project</em>.</strong></p>
 <ul>
 <li>user: <code>userNN</code> (where <code>NN</code> is your user number, same as <code>ocp_username</code>)</li>
 <li>ocp_username: <code>userNN</code> (where <code>NN</code> is your user number, same as <code>user</code>)</li>
-<li>ocp_password: your OpenShift password found on the <a href="../../access/">Environment Access</a> page</li>
+<li>ocp_password: your OpenShift password found on the <a href="../../access/" target="wsc_envaccess">Environment Access</a> page (the same one you've been using throughout the labs).</li>
 <li>ocp_project: <code>userNN-project</code></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are six parameters being passed to the runbook, but two of them have been pre-filled for you and should not be changed.</p>
+</div>
+<p>Your screen should look like this after you have filled in the parameter values. </p>
+<p><img alt="cp4aiops-runbook-parameters" src="../../images/cp4aiops-runbook-parameters.png" /></p>
 </li>
 <li>
 <p><strong>After populating the variables, click <em>Start Runbook</em> at the bottom of the page.</strong></p>
-<p>You can now click the smaller <em>Run</em> buttons to manually run each step in the runbook.</p>
+<p>At thus point the <em>Run</em> button for the first step in the runbook will be enabled.</p>
+<p><img alt="cp4aiops-runbook-step1-ready" src="../../images/cp4aiops-runbook-step1-ready.png" /></p>
 </li>
 <li>
-<p><strong>Click through each step in the runbook</strong>, waiting for each step to show as <strong>completed</strong> before moving on.</p>
+<p><strong>Click the <em>Run</em> button for <em>Step 1: Log in to OpenShift</em> to start the first action in the runbook.</strong></p>
+<p>Wait for <em>Step 1</em> to complete. Your screen should look similar to this:</p>
+<p><img alt="cp4aiops-runbook-step1-success" src="../../images/cp4aiops-runbook-step1-success.png" /></p>
+</li>
+<li>
+<p><strong>Click the <em>Next step</em> button in order to enable the <em>Run</em> button for <em>Step 2: Check userNN postgresql environment variable</em></strong>.</p>
+</li>
+<li>
+<p><strong>Click through each step in the runbook</strong>, waiting for each step to show as <strong>completed</strong> before moving on..</p>
+<p>If the output of step 4 includes the response <em>POSTGRESQL_DATABASE=my_data</em>, like in the screen shot below, then the application issue should be fixed.</p>
 <p><img alt="runbook-complete" src="../../images/runbook-complete.png" /></p>
-<p>If the output of step 4 includes the return <code>POSTGRESQL_DATABASE=my_data</code>, the application issue should be fixed.</p>
+<p>Since it is the last step in the Runbook, at the end of <em>Step 4: Check userNN postgresql environment variable</em>, you will have a <em>Complete</em> button to click instead of a <em>Next Step</em> button. </p>
 <p>You can give the runbook a 1-5 star rating, leave a comment, and mark that it worked. This will provide feedback to the automation engineers and AI algorithms so that runbooks can continue to improve.</p>
 </li>
 <li>
-<p><strong>In the OpenShift console, navigate back to your <code>userNN-project</code> in the developer view. Access your frontend application by clicking the hyperlink button attached to the NodeJS application.</strong></p>
+<p><strong>In the OpenShift console, navigate back to your <em>userNN-project</em> in the developer view. Access your frontend application by clicking the hyperlink button attached to the NodeJS application.</strong></p>
 <p><img alt="app-working" src="../../images/app-working.png" /></p>
-<p>Because the NodeJS application can now reach the Postgresql database, the application is accessible and you can enter fruit quantities into the inventory database using the webpage.</p>
+<p>Because the NodeJS application can now reach the Postgresql database, the application is accessible and you can enter fruit quantities into the inventory database using the webpage. Feel free to take a moment or two to tinker with this sample application as a reward for making it this far in the lab!</p>
 <p><img alt="app-working2" src="../../images/app-working2.png" /></p>
 <p>As you interact with the application, you will be able to see the resulting calls and traces in the <code>userNN-project</code> Instana application perspective. You should also see that 200 status calls have returned.</p>
 <p><img alt="instana-working" src="../../images/instana-working.png" /></p>
@@ -965,7 +1011,7 @@
 <li>
 <p><strong>Click the "Temporal grouping" tile.</strong></p>
 <p><img alt="temporal-grouping" src="../../images/temporal-grouping.png" /></p>
-<p>You can see the status and history of the AI model training as well as the applications that it is being applied to. Users with elevated credentials are able to manually kick of training to improve the AI model, as well as set up a schedule to automate training on a consistent basis.</p>
+<p>You can see the status and history of the AI model training as well as the applications that it is being applied to. Users with elevated credentials are able to manually kick off training to improve the AI model, as well as set up a schedule to automate training on a consistent basis.</p>
 </li>
 </ol>
 <h2 id="wrapping-up">Wrapping Up<a class="headerlink" href="#wrapping-up" title="Permanent link">&para;</a></h2>
@@ -973,12 +1019,12 @@
 <p>With Instana, Turbonomic, and IBM Cloud Pak for AIOps, you can keep your applications up and running, meeting your SLAs, and when incidents do arise, you can remediate them quickly and get back to focusing on other projects.</p>
 <!-- With Instana and IBM Cloud Pak for AIOps, you can keep your applications up and running, meeting your SLAs, and when incidents do arise, you can remediate them quickly and get back to focusing on other projects. -->
 
-<p>We encourage you to look through the references below and reach out to this <a href="mailto:matt.mondics@ibm.com">tutorial author</a> if you would like to see or learn more.</p>
+<p>We encourage you to look through the references below and reach out to the <a href="mailto:lsilliman@us.ibm.com">workshop owner</a> if you would like to see or learn more.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://www.ibm.com/products/cloud-pak-for-aiops">IBM Cloud Pak for AIOps Product Page</a></li>
-<li><a href="https://www.ibm.com/docs/en/cloud-paks/cloud-pak-aiops">IBM Cloud Pak for AIOps Documentation</a></li>
-<li><a href="https://www.ibm.com/docs/en/cloud-paks/cloud-pak-aiops/4.4.1?topic=integrations-integration-types">IBM Cloud Pak for AIOps Integrations</a></li>
+<li><a href="https://www.ibm.com/products/cloud-pak-for-aiops" target="wsc_cp4aiopsdoc">IBM Cloud Pak for AIOps Product Page</a></li>
+<li><a href="https://www.ibm.com/docs/en/cloud-paks/cloud-pak-aiops" target="wsc_cp4aiopsdoc">IBM Cloud Pak for AIOps Documentation</a></li>
+<li><a href="https://www.ibm.com/docs/en/cloud-paks/cloud-pak-aiops/4.4.1?topic=integrations-integration-types" target="wsc_cp4aiopsdoc">IBM Cloud Pak for AIOps Integrations</a></li>
 </ul>
 
 
