@@ -166,7 +166,7 @@ Instana is an enterprise observability solution that offers application performa
 
     !!! Tip
 
-        If you click on the _Configuration_ tab, you can see that this application is definited simply as those resources that reside in the _robot-shop_ Kubernetes namespace. Return to the _Summary_ tab after viewing this configuration information.
+        If you click on the _Configuration_ tab, you can see that this application is defined simply as those resources that reside in the _robot-shop_ Kubernetes namespace. Return to the _Summary_ tab after viewing this configuration information.
 
     Alongside the Robot Shop application running in OpenShift, there is a container running a Python application that generates load to each microservice. The metrics you see now in the application perspective are coming from that load generator. At the top of the page, you can see the total number of calls, the number of erroneous calls, and the mean latency for each call over the past hour.
 
@@ -222,7 +222,7 @@ Instana is an enterprise observability solution that offers application performa
  
     An interesting thing to note on this screen is that by observing the *Monitored By Instana* column, you can see that only the *compute* nodes, and not the *control* nodes, are being monitored by an Instana agent.  This is because application workloads run only on compute nodes.
 
-15. **Click the _Namespace_ tab, then search for _robot-shop_ and select it.**.  
+15. **Click the _Namespace_ tab, then click on the maginifying glass icon and search for _robot-shop_ and select it.**.
 
     !!! Tip
 

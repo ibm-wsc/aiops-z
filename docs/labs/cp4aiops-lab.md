@@ -17,7 +17,7 @@ In the following section, you will be using IBM Cloud Pak for AIOps to solve an 
 
     ![ocp-postgresql2](ocp-postgresql2.png)
 
-    Your NodeJS pod will shortly become unready as it is no longer able to find the correct Postgresql database.
+    Your NodeJS pod will shortly become unready as it is no longer able to find the correct Postgresql database. If at first it is still available, you likely need to wait a few more seconds.
 
 3.  **Try to access the frontend application with the small hyperlink button (1) on the NodeJS icon.**
 
@@ -61,7 +61,7 @@ IBM Cloud Pak for AIOps helps you **uncover hidden insights from multiple source
 
 #### AIOps Insights
 
-6. **Choose the _AIOps Insights_ option from the left-side menu.  It may be necessary to click the "hamburger-menu" button in the top-left corner of the page to bring the left-side menu into view.**
+6. **Navigate to _Operate->AIOps Insights_ from the left-side menu.  It may be necessary to click the "hamburger-menu" button in the top-left corner of the page to bring the left-side menu into view.**
 
     You should reach a page similar to this:
 
@@ -88,7 +88,7 @@ IBM Cloud Pak for AIOps helps you **uncover hidden insights from multiple source
 
 #### Integrations
 
-1. **From the left-side menu, navigate to _Define -> Integrations-.**
+1. **From the left-side menu, navigate to _Define -> Integrations_.**
 
     You should see a page like this:
 
@@ -116,13 +116,13 @@ IBM Cloud Pak for AIOps helps you **uncover hidden insights from multiple source
 
     Similar to Turbonomic, CP4AIOps has integrated the Instana Application Perspectives.
 
-2.  **Click the link for the _robot-shop_ application.**
+2.  **Search for and click the link for the _robot-shop_ application.**
 
     You will see a page like this:
 
     ![resource-management](resource-management.png)
 
-    You now have a scoped view of just the resources associated with the Robot Shop Microservices Application - all of the Kubernetes objects such as pods, services, and routes, but also the individual application components within the containers such as `.jar` files and even the API calls made to each endpoint. 
+    You now have a scoped view of just the resources associated with the Robot Shop Microservices Application - not only all of the Kubernetes objects such as pods, services, and routes, but also the individual application components within the containers such as `.jar` files and even the API calls made to each endpoint.
 
     You can zoom in on the topology to better see the individual application components and relationships.
 
@@ -212,7 +212,7 @@ IBM Cloud Pak for AIOps helps you **uncover hidden insights from multiple source
 
     Cloud Pak for AIOps has identified this error as an *incident*, and has provided a runbook to fix it.
 
-18. **Back in the CP4AIOps incident at the bottom of the page, click the Run button (1) associated with the _Fix userNN postgresql (ssh)_ runbook.**
+18. **Back in the CP4AIOps incident near the bottom of the page, click the Run button (1) associated with the _Fix userNN postgresql (ssh)_ runbook.**
 
     !!! Tip
 
@@ -290,13 +290,13 @@ IBM Cloud Pak for AIOps helps you **uncover hidden insights from multiple source
 
 Throughout this tutorial, you have been interacting with alerts, incidents, and policies that have been generated or influenced by AI algorithms that are running and training in CP4AIOps This section will show you the AI models that come pre-loaded with CP4AIOps and the benefits they provide.
 
-23. **From the left-side menu, navigate to Operate ->  "AI Model Management".**
+23. **From the left-side menu, navigate to Operate -> AI Model Management.**
 
     ![ai-model-management](ai-model-management.png)
 
     This page allows you to train the pre-loaded AI models to hone their ability to derive insights from your incoming data connections (Instana in this tutorial). 
 
-    For example, the *Temporal grouping* AI model groups alerts which co-occur over time. When a problem arises, there are typically multiple parts of a system or environment that are impacted. When alerts in different areas co-occur, it makes sense to look at them together and treat them as one problem to try and determine what might have happened. This is one of the ways that noise is reduced from the hundreds of thousands of events all the way down to a few hundred incidents.
+    For example, the *Temporal grouping* AI model groups alerts which co-occur over time. When a problem arises, there are typically multiple parts of a system or environment that are impacted. When alerts in different areas co-occur, it makes sense to look at them together and treat them as one problem to try and determine what might have happened. This is one of the ways that noise is reduced from hundreds of thousands of events all the way down to a few hundred incidents.
 
 24. **Click the "Temporal grouping" tile.**
 
