@@ -781,7 +781,7 @@
 <li>
 <p><strong>Under the <em>Environment</em> tab (1), change the value for <em>POSTGRESQL_DATABASE</em> from <em>my_data</em> to <em>my_data-error</em> (2). Click save at the bottom of the page.</strong></p>
 <p><img alt="ocp-postgresql2" src="../../images/ocp-postgresql2.png" /></p>
-<p>Your NodeJS pod will shortly become unready as it is no longer able to find the correct Postgresql database.</p>
+<p>Your NodeJS pod will shortly become unready as it is no longer able to find the correct Postgresql database. If at first it is still available, you likely need to wait a few more seconds.</p>
 </li>
 <li>
 <p><strong>Try to access the frontend application with the small hyperlink button (1) on the NodeJS icon.</strong></p>
@@ -815,7 +815,7 @@
 <h4 id="aiops-insights">AIOps Insights<a class="headerlink" href="#aiops-insights" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>Choose the <em>AIOps Insights</em> option from the left-side menu.  It may be necessary to click the "hamburger-menu" button in the top-left corner of the page to bring the left-side menu into view.</strong></p>
+<p><strong>Navigate to <em>Operate-&gt;AIOps Insights</em> from the left-side menu.  It may be necessary to click the "hamburger-menu" button in the top-left corner of the page to bring the left-side menu into view.</strong></p>
 <p>You should reach a page similar to this:</p>
 <p><img alt="aiops-insights" src="../../images/aiops-insights.png" /></p>
 <p>On this page, you see visualizations of two of the main goals of CP4AIOps - improving problem resolution time (Mean Time to Restore) and reducing the "signal-to-noise ratio" from all of the monitoring data produced within your enterprise IT environment (Reduction of Noise).</p>
@@ -834,7 +834,7 @@
 <h4 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>From the left-side menu, navigate to _Define -&gt; Integrations-.</strong></p>
+<p><strong>From the left-side menu, navigate to <em>Define -&gt; Integrations</em>.</strong></p>
 <p>You should see a page like this:</p>
 <p><img alt="integrations" src="../../images/integrations.png" /></p>
 <ul>
@@ -859,10 +859,10 @@
 <p>Similar to Turbonomic, CP4AIOps has integrated the Instana Application Perspectives.</p>
 </li>
 <li>
-<p><strong>Click the link for the <em>robot-shop</em> application.</strong></p>
+<p><strong>Search for and click the link for the <em>robot-shop</em> application.</strong></p>
 <p>You will see a page like this:</p>
 <p><img alt="resource-management" src="../../images/resource-management.png" /></p>
-<p>You now have a scoped view of just the resources associated with the Robot Shop Microservices Application - all of the Kubernetes objects such as pods, services, and routes, but also the individual application components within the containers such as <code>.jar</code> files and even the API calls made to each endpoint. </p>
+<p>You now have a scoped view of just the resources associated with the Robot Shop Microservices Application - not only all of the Kubernetes objects such as pods, services, and routes, but also the individual application components within the containers such as <code>.jar</code> files and even the API calls made to each endpoint.</p>
 <p>You can zoom in on the topology to better see the individual application components and relationships.</p>
 <p><img alt="resource-management-3" src="../../images/resource-management-3.png" /></p>
 </li>
@@ -937,7 +937,7 @@
 <p>Cloud Pak for AIOps has identified this error as an <em>incident</em>, and has provided a runbook to fix it.</p>
 </li>
 <li>
-<p><strong>Back in the CP4AIOps incident at the bottom of the page, click the Run button (1) associated with the <em>Fix userNN postgresql (ssh)</em> runbook.</strong></p>
+<p><strong>Back in the CP4AIOps incident near the bottom of the page, click the Run button (1) associated with the <em>Fix userNN postgresql (ssh)</em> runbook.</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You may need to scroll down within the incident to find the runbook associated with the incident.</p>
@@ -1003,10 +1003,10 @@
 <p>Throughout this tutorial, you have been interacting with alerts, incidents, and policies that have been generated or influenced by AI algorithms that are running and training in CP4AIOps This section will show you the AI models that come pre-loaded with CP4AIOps and the benefits they provide.</p>
 <ol>
 <li>
-<p><strong>From the left-side menu, navigate to Operate -&gt;  "AI Model Management".</strong></p>
+<p><strong>From the left-side menu, navigate to Operate -&gt; AI Model Management.</strong></p>
 <p><img alt="ai-model-management" src="../../images/ai-model-management.png" /></p>
 <p>This page allows you to train the pre-loaded AI models to hone their ability to derive insights from your incoming data connections (Instana in this tutorial). </p>
-<p>For example, the <em>Temporal grouping</em> AI model groups alerts which co-occur over time. When a problem arises, there are typically multiple parts of a system or environment that are impacted. When alerts in different areas co-occur, it makes sense to look at them together and treat them as one problem to try and determine what might have happened. This is one of the ways that noise is reduced from the hundreds of thousands of events all the way down to a few hundred incidents.</p>
+<p>For example, the <em>Temporal grouping</em> AI model groups alerts which co-occur over time. When a problem arises, there are typically multiple parts of a system or environment that are impacted. When alerts in different areas co-occur, it makes sense to look at them together and treat them as one problem to try and determine what might have happened. This is one of the ways that noise is reduced from hundreds of thousands of events all the way down to a few hundred incidents.</p>
 </li>
 <li>
 <p><strong>Click the "Temporal grouping" tile.</strong></p>

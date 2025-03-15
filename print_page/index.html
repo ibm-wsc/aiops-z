@@ -1035,7 +1035,7 @@
 <p>An application perspective represents a set of services and endpoints that are defined by a shared context and is declared using tags. For example, the robot-shop application perspective encompasses all services and endpoints that meet the tag <code>kubernetes-namespace=robot-shop</code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you click on the <em>Configuration</em> tab, you can see that this application is definited simply as those resources that reside in the <em>robot-shop</em> Kubernetes namespace. Return to the <em>Summary</em> tab after viewing this configuration information.</p>
+<p>If you click on the <em>Configuration</em> tab, you can see that this application is defined simply as those resources that reside in the <em>robot-shop</em> Kubernetes namespace. Return to the <em>Summary</em> tab after viewing this configuration information.</p>
 </div>
 <p>Alongside the Robot Shop application running in OpenShift, there is a container running a Python application that generates load to each microservice. The metrics you see now in the application perspective are coming from that load generator. At the top of the page, you can see the total number of calls, the number of erroneous calls, and the mean latency for each call over the past hour.</p>
 <p>As with the <em>Websites &amp; Mobile Apps</em> section, the <em>Application</em> perspective has various tabs that contain different information. When it comes to microservices, one of the most helpful tabs in the <em>Application</em> perspective is the <em>Dependency</em> graph.</p>
@@ -1078,7 +1078,7 @@
 <p>An interesting thing to note on this screen is that by observing the <em>Monitored By Instana</em> column, you can see that only the <em>compute</em> nodes, and not the <em>control</em> nodes, are being monitored by an Instana agent.  This is because application workloads run only on compute nodes.</p>
 </li>
 <li>
-<p><strong>Click the <em>Namespace</em> tab, then search for <em>robot-shop</em> and select it.</strong>.  </p>
+<p><strong>Click the <em>Namespace</em> tab, then click on the maginifying glass icon and search for <em>robot-shop</em> and select it.</strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Clicking the 'magnifying glass' icon at the right of the search bar may be necessary in order to enable you to enter text in the search field.</p>
@@ -1257,7 +1257,7 @@
 <p>The first thing to notice is the supply chain on the left side of the page. This is the section with circles connected with arrrows. Turbonomic uses the concept of a supply chain made up of buyers and sellers all with the goal of meeting application resource demand. The supply chain shown on the homepage includes all the entities that Turbonomic identified based on deployment of the KubeTurbo operator on the OpenShift on IBM Z cluster. The relationships and interdependencies between each entity were automatically identified and provide an overview of how each object relates to one another. Because an OpenShift cluster is being monitored, you can see that application and cluster infrastructure components were found, including containers, namespaces, persistent volumes, and the single virtual machines running the OpenShift nodes. This is an interactable chart so you can click on any of the entity types to drill down directly from the homepage.</p>
 <p><img alt="turbo-business-applications" src="../images/turbo-business-applications.png" /></p>
 <p>In the screenshot above, on the right side of the page, you can see there is a <em>Top Business Applications</em> section. A Business Application in Turbonomic is defined as a group of related objects of your choosing. In the case of this installation, Business Applications are imported from the Instana Application Perspectives, as well as all the related entities that Turbonomic correlated with them, such as the virtual machine the pods are running on, the namespace (project) they're running in, the persistent volumes where they store data, and the Kubernetes cluster itself. This is one example of the integration between Instana and Turbonomic.</p>
-<p>Instana working alongside Turbonomic brings other benefits as well, such as letting Turbonomic see the application response times and transaction speeds and then use that data to scale pod counts up or down to meet defined Service-Level Objectives (SLOs) at minimal cost. Without Instana or another Application Performance Monitoring (APM) solution in place, you would not have any visibility into application response times or metrics, and this Turbonomic functionality would be inaccessible.</p>
+<p>Instana working alongside Turbonomic brings other benefits as well, such as letting Turbonomic see the application response times and transaction speeds and then using that data to scale pod counts up or down to meet defined Service-Level Objectives (SLOs) at minimal cost. Without Instana or another Application Performance Monitoring (APM) solution in place, you would not have any visibility into application response times or metrics, and this Turbonomic functionality would be inaccessible.</p>
 <p><img alt="turbo-pending-actions-home" src="../images/turbo-pending-actions-home.png" /></p>
 <p>Near the middle of the page, you will see a section titled "Pending Actions". These are all the actions that Turbonomic is recommending you take to make sure applications get the resources they need without over-provisioning. You will learn more about actions later in this tutorial.</p>
 </li>
@@ -1399,7 +1399,7 @@ For OpenShift on IBM Z, Turbonomic will only *recommend* actions related to clus
 <li>
 <p><strong>Under the <em>Environment</em> tab (1), change the value for <em>POSTGRESQL_DATABASE</em> from <em>my_data</em> to <em>my_data-error</em> (2). Click save at the bottom of the page.</strong></p>
 <p><img alt="ocp-postgresql2" src="../images/ocp-postgresql2.png" /></p>
-<p>Your NodeJS pod will shortly become unready as it is no longer able to find the correct Postgresql database.</p>
+<p>Your NodeJS pod will shortly become unready as it is no longer able to find the correct Postgresql database. If at first it is still available, you likely need to wait a few more seconds.</p>
 </li>
 <li>
 <p><strong>Try to access the frontend application with the small hyperlink button (1) on the NodeJS icon.</strong></p>
@@ -1433,7 +1433,7 @@ For OpenShift on IBM Z, Turbonomic will only *recommend* actions related to clus
 <h4 id="labs-cp4aiops-lab-aiops-insights">AIOps Insights<a class="headerlink" href="#labs-cp4aiops-lab-aiops-insights" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>Choose the <em>AIOps Insights</em> option from the left-side menu.  It may be necessary to click the "hamburger-menu" button in the top-left corner of the page to bring the left-side menu into view.</strong></p>
+<p><strong>Navigate to <em>Operate-&gt;AIOps Insights</em> from the left-side menu.  It may be necessary to click the "hamburger-menu" button in the top-left corner of the page to bring the left-side menu into view.</strong></p>
 <p>You should reach a page similar to this:</p>
 <p><img alt="aiops-insights" src="../images/aiops-insights.png" /></p>
 <p>On this page, you see visualizations of two of the main goals of CP4AIOps - improving problem resolution time (Mean Time to Restore) and reducing the "signal-to-noise ratio" from all of the monitoring data produced within your enterprise IT environment (Reduction of Noise).</p>
@@ -1452,7 +1452,7 @@ For OpenShift on IBM Z, Turbonomic will only *recommend* actions related to clus
 <h4 id="labs-cp4aiops-lab-integrations">Integrations<a class="headerlink" href="#labs-cp4aiops-lab-integrations" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>From the left-side menu, navigate to _Define -&gt; Integrations-.</strong></p>
+<p><strong>From the left-side menu, navigate to <em>Define -&gt; Integrations</em>.</strong></p>
 <p>You should see a page like this:</p>
 <p><img alt="integrations" src="../images/integrations.png" /></p>
 <ul>
@@ -1477,10 +1477,10 @@ For OpenShift on IBM Z, Turbonomic will only *recommend* actions related to clus
 <p>Similar to Turbonomic, CP4AIOps has integrated the Instana Application Perspectives.</p>
 </li>
 <li>
-<p><strong>Click the link for the <em>robot-shop</em> application.</strong></p>
+<p><strong>Search for and click the link for the <em>robot-shop</em> application.</strong></p>
 <p>You will see a page like this:</p>
 <p><img alt="resource-management" src="../images/resource-management.png" /></p>
-<p>You now have a scoped view of just the resources associated with the Robot Shop Microservices Application - all of the Kubernetes objects such as pods, services, and routes, but also the individual application components within the containers such as <code>.jar</code> files and even the API calls made to each endpoint. </p>
+<p>You now have a scoped view of just the resources associated with the Robot Shop Microservices Application - not only all of the Kubernetes objects such as pods, services, and routes, but also the individual application components within the containers such as <code>.jar</code> files and even the API calls made to each endpoint.</p>
 <p>You can zoom in on the topology to better see the individual application components and relationships.</p>
 <p><img alt="resource-management-3" src="../images/resource-management-3.png" /></p>
 </li>
@@ -1555,7 +1555,7 @@ For OpenShift on IBM Z, Turbonomic will only *recommend* actions related to clus
 <p>Cloud Pak for AIOps has identified this error as an <em>incident</em>, and has provided a runbook to fix it.</p>
 </li>
 <li>
-<p><strong>Back in the CP4AIOps incident at the bottom of the page, click the Run button (1) associated with the <em>Fix userNN postgresql (ssh)</em> runbook.</strong></p>
+<p><strong>Back in the CP4AIOps incident near the bottom of the page, click the Run button (1) associated with the <em>Fix userNN postgresql (ssh)</em> runbook.</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You may need to scroll down within the incident to find the runbook associated with the incident.</p>
@@ -1621,10 +1621,10 @@ For OpenShift on IBM Z, Turbonomic will only *recommend* actions related to clus
 <p>Throughout this tutorial, you have been interacting with alerts, incidents, and policies that have been generated or influenced by AI algorithms that are running and training in CP4AIOps This section will show you the AI models that come pre-loaded with CP4AIOps and the benefits they provide.</p>
 <ol>
 <li>
-<p><strong>From the left-side menu, navigate to Operate -&gt;  "AI Model Management".</strong></p>
+<p><strong>From the left-side menu, navigate to Operate -&gt; AI Model Management.</strong></p>
 <p><img alt="ai-model-management" src="../images/ai-model-management.png" /></p>
 <p>This page allows you to train the pre-loaded AI models to hone their ability to derive insights from your incoming data connections (Instana in this tutorial). </p>
-<p>For example, the <em>Temporal grouping</em> AI model groups alerts which co-occur over time. When a problem arises, there are typically multiple parts of a system or environment that are impacted. When alerts in different areas co-occur, it makes sense to look at them together and treat them as one problem to try and determine what might have happened. This is one of the ways that noise is reduced from the hundreds of thousands of events all the way down to a few hundred incidents.</p>
+<p>For example, the <em>Temporal grouping</em> AI model groups alerts which co-occur over time. When a problem arises, there are typically multiple parts of a system or environment that are impacted. When alerts in different areas co-occur, it makes sense to look at them together and treat them as one problem to try and determine what might have happened. This is one of the ways that noise is reduced from hundreds of thousands of events all the way down to a few hundred incidents.</p>
 </li>
 <li>
 <p><strong>Click the "Temporal grouping" tile.</strong></p>
