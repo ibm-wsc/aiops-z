@@ -2,10 +2,28 @@
 The virtual machines seem to work best in a Firefox browser on your local workstation. Running the VMs in Chrome will sometimes result in an issue where your mouse pointer is not visible.
 
 ## Accessing your Virtual Machine
-1. Go here: [here](TBD)
-2. Log in with your IBM ID.
-   1. If you don't already have an IBM ID, you will need to create one [here](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776&target=https%3A%2F%2Flogin.ibm.com%2Foidc%2Fendpoint%2Fdefault%2Fauthorize%3FqsId%3Db9977aed-1e6b-4321-9b43-ee4365544452%26client_id%3DODllMDk4YzItMjgxOC00)
-3. When prompted, enter the workshop password provided by your instructor. For security reasons, this password is not listed here.
+1. Go here: [https://techzone.ibm.com/my/workshops/student/67bde333ae3e9e263f4c586e](https://techzone.ibm.com/my/workshops/student/67bde333ae3e9e263f4c586e){target=_new}
+
+    !!! Tip
+
+        If it is more convenient for you, the above URL is represented by the following QR Code:  
+
+        ![qrcode_techzone.ibm.com](qrcode_techzone.ibm.com.png)
+
+2. If you are not currently logged in with your IBMid, you will be prompted to log in at a screen like below. If you do not already have an *IBMid*, the log in page should contain a link to allow you to create one.  They are free and it only takes a few minutes to create it. 
+
+    ![IBMId-login](IBMId-login.png)
+
+    !!! Tip
+   
+        If the log in page does not have an obvious link for creating an IBMid, try [here](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776&target=https%3A%2F%2Flogin.ibm.com%2Foidc%2Fendpoint%2Fdefault%2Fauthorize%3FqsId%3Db9977aed-1e6b-4321-9b43-ee4365544452%26client_id%3DODllMDk4YzItMjgxOC00)
+
+3. You should reach the workshop page.  There will be a field where you are asked to enter the workshop password, as in this screen snippet:
+
+    ![workshop-login](workshop-login.png)
+
+    Enter the workshop password provided by your instructor. For security reasons, this password is not listed here.
+
 4. If prompted, log into the Windows virtual machine with password: `IBMDem0s` (that's a zero). You may already be logged in when first accessing the VM.
 
 ## Links to platforms
