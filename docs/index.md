@@ -10,7 +10,7 @@
 
 ## Presentation
 
-* <a href="aiops-z_11-21-24.pdf" target="_blank">Presentation</a>
+* <a href="aiops-z_03-20-25.pdf" target="_blank">Presentation</a>
 
 ## Labs
 It is recommended that you complete the Instana lab first then move on to the Turbonomic and/or IBM Cloud Pak for AIOps labs.
