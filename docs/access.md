@@ -1,5 +1,12 @@
 # Accessing the Environment
-The virtual machines seem to work best in a Firefox browser on your local workstation. Running the VMs in Chrome will sometimes result in an issue where your mouse pointer is not visible.
+
+!!! Important "Important - before you get started"
+
+    Your experience may vary, but in past workshops, the virtual machines seemed to work best in a Firefox browser on your local workstation. Running the virtual machines in Chrome sometimes resulted in an issue where your mouse pointer is not visible.
+
+    Regardless of which browser you use on your local workstation, within the virtual machine itself, Chrome has been set to the default browser and the lab works best within Chrome within the virtual machine.
+
+    Within your virtual machine, the workshop website has been set as your home page within Chrome. Once you are successfully logged in to your virtual machine, it is recommended for your convenience that you stop accessing this site from your local workstation but instead access this site from within your virtual machine.
 
 ## Accessing your Virtual Machine
 1. Go here: [https://techzone.ibm.com/my/workshops/student/67bde333ae3e9e263f4c586e](https://techzone.ibm.com/my/workshops/student/67bde333ae3e9e263f4c586e){target=_new}
@@ -16,7 +23,7 @@ The virtual machines seem to work best in a Firefox browser on your local workst
 
     !!! Tip
    
-        If the log in page does not have an obvious link for creating an IBMid, try [here](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776&target=https%3A%2F%2Flogin.ibm.com%2Foidc%2Fendpoint%2Fdefault%2Fauthorize%3FqsId%3Db9977aed-1e6b-4321-9b43-ee4365544452%26client_id%3DODllMDk4YzItMjgxOC00)
+        If the log in page does not have an obvious link for creating an IBMid, try [here](https://www.ibm.com/account/reg/us-en/signup?formid=urx-19776&target=https%3A%2F%2Flogin.ibm.com%2Foidc%2Fendpoint%2Fdefault%2Fauthorize%3FqsId%3Db9977aed-1e6b-4321-9b43-ee4365544452%26client_id%3DODllMDk4YzItMjgxOC00){target=_new}
 
 3. You should reach the workshop page.  There will be a field where you are asked to enter the workshop password, as in this screen snippet:
 
@@ -24,7 +31,13 @@ The virtual machines seem to work best in a Firefox browser on your local workst
 
     Enter the workshop password provided by your instructor. For security reasons, this password is not listed here.
 
-4. If prompted, log into the Windows virtual machine with password: `IBMDem0s` (that's a zero). You may already be logged in when first accessing the VM.
+4. Once you successfully enter the workshop password, you should be assigned an environment, and you will get to a screen with a large blue button at the bottom which will allow you to access your workshop virtual machine within your browser.
+
+    !!! Important
+
+        Take note of your environment number, as you should use that number as the last two digits of your userid for the lab.  For example, if you were assigned environment **03**, then you will use the userid **user03** throughout the labs.
+
+5. If prompted, log into the Windows virtual machine with password: `IBMDem0s` (that's a zero). You may already be logged in when first accessing the VM.
 
 ## Links to platforms
 
