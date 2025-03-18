@@ -1,14 +1,21 @@
 # Accessing the Environment
 
-!!! Important "Important - before you get started"
+From your local workstation, you will access a workshop Windows virtual machine from which you will perform the lab. This virtual machine is provided by the *IBM Technology Zone* service. 
+
+The directions for logging in to *IBM Technology Zone* and accessing your workshop virtual machine are given in the next section, but please read the following tips first:
+
+!!! Important "From your local workstation"
 
     Your experience may vary, but in past workshops, the virtual machines seemed to work best in a Firefox browser on your local workstation. Running the virtual machines in Chrome sometimes resulted in an issue where your mouse pointer is not visible.
 
-    Regardless of which browser you use on your local workstation, within the virtual machine itself, Chrome has been set to the default browser and the lab works best within Chrome within the virtual machine.
+!!! Important "From within the workshop virtual machine"
+
+    Regardless of which browser you use on your local workstation, within the virtual machine itself, Chrome has been set to the default browser. The lab works best in Chrome within the virtual machine.
 
     Within your virtual machine, the workshop website has been set as your home page within Chrome. Once you are successfully logged in to your virtual machine, it is recommended for your convenience that you stop accessing this site from your local workstation but instead access this site from within your virtual machine.
 
 ## Accessing your Virtual Machine
+
 1. Go here: [https://techzone.ibm.com/my/workshops/student/67bde333ae3e9e263f4c586e](https://techzone.ibm.com/my/workshops/student/67bde333ae3e9e263f4c586e){target=_new}
 
     !!! Tip
@@ -31,19 +38,25 @@
 
     Enter the workshop password provided by your instructor. For security reasons, this password is not listed here.
 
-4. Once you successfully enter the workshop password, you should be assigned an environment, and you will get to a screen with a large blue button at the bottom which will allow you to access your workshop virtual machine within your browser.
+4. Once you successfully enter the workshop password, you should be assigned an environment, as shown in the below screen snippet:
+
+    ![environment-userid](environment-userid.png)
+
+    On this same page that shows the environment, near the bottom will be a large blue button, as shown below, which will allow you to access your workshop virtual machine within your browser.
+
+    ![big-blue-button](big-blue-button.png)
 
     !!! Important
 
-        Take note of your environment number, as you should use that number as the last two digits of your userid for the lab.  For example, if you were assigned environment **03**, then you will use the userid **user03** throughout the labs.
+        Take note of your environment number, as you should use that number as the last two digits of your userid for the lab.  For example, if you were assigned environment **1**, then you will use the userid **user01** throughout the labs.  If you were assigned environment **2**, then you will use the userid **user02** throught the labs. And so on.
 
-5. If prompted, log into the Windows virtual machine with password: `IBMDem0s` (that's a zero). You may already be logged in when first accessing the VM.
+5. If prompted, log into the Windows virtual machine with username _Administrator_ (which should already be set for you) and password: `IBMDem0s` (that's a zero). You may already be logged in when first accessing the VM.
 
 ## Links to platforms
 
 !!! Tip
 
-    These URLs are given within each lab section at the appropriate place.  They are repeated here for your convenience, in case you accidentally close your browser tab or window and lose your session- you can use the links here to easily resume your interrupted session.  
+    These URLs are given within each lab section at the appropriate place.  They are repeated here for your convenience. If you accidentally close your browser tab or window and lose your session, you can use the links here to easily resume your interrupted session.  
 
 - OpenShift Cluster URL: [https://console-openshift-console.apps.atsocpd1.dmz/dashboards](https://console-openshift-console.apps.atsocpd1.dmz/dashboards){target=wsc_ocpconsole}
 - Instana URL: [https://unit0-wsc.lcsins01.dmz](https://unit0-wsc.lcsins01.dmz){target=wsc_instana}
