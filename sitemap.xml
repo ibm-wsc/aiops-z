@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/</loc>
-         <lastmod>2025-03-15</lastmod>
+         <lastmod>2025-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/access/</loc>
-         <lastmod>2025-03-15</lastmod>
+         <lastmod>2025-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/localdocbuild/</loc>
-         <lastmod>2025-03-15</lastmod>
+         <lastmod>2025-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/workshop-architecture/</loc>
-         <lastmod>2025-03-15</lastmod>
+         <lastmod>2025-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/labs/cp4aiops-lab/</loc>
-         <lastmod>2025-03-15</lastmod>
+         <lastmod>2025-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/labs/instana-lab/</loc>
-         <lastmod>2025-03-15</lastmod>
+         <lastmod>2025-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/labs/turbonomic-lab/</loc>
-         <lastmod>2025-03-15</lastmod>
+         <lastmod>2025-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
