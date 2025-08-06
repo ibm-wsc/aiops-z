@@ -61,7 +61,7 @@ You configure managed environments as [Turbonomic targets](https://www.ibm.com/d
 
     You should see a page similar to the following:
 
-    ![turbo-search-namespaces-2](https://raw.githubusercontent.com/mmondics/media/main/images/turbo-search-namespaces-2.png)
+    ![turbo-search-namespaces-2](turbo-search-namespaces-2.png)
 
     You now have a view that is scoped to only the components running in the robot-shop namespace, as well as any related components that those pods interact with, such as virtual machines, storage volumes, etc. You are provided all the actions against these components, the top services and workload controllers by CPU and memory for the robot-shop components, information about any quotas assigned to the project, and more. If you want to scope down an individual's access to a single application, only workloads in a specific datacenter, or a custom group of workloads and components you define, this is an example of what that could look like.
 
