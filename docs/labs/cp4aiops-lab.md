@@ -9,13 +9,13 @@ In the following section, you will be using IBM Cloud Pak for AIOps to solve an 
 
     !!! Tip
 
-        You may still have your OpenShift Web Console tab open from the Instana or Turbonomic labs.  If not, you can find the URL again on the [Environment Access](../access.md){target=wsc_envaccess} page.
+        You may still have your OpenShift Web Console tab open from the Instana or Turbonomic labs.  If not, you can find the URL again on the [Lab Consoles Access](../console-access.md){target=wsc_envaccess} page.
 
     ![ocp-postgresql](ocp-postgresql.png)
 
-2.  **Under the _Environment_ tab (1), change the value for _POSTGRESQL_DATABASE_ from _my_data_ to *my_data-error* (2). Click save at the bottom of the page.**
+2.  **Under the _Environment_ tab (1), change the value for _POSTGRESQL_DATABASE_ from _my_data-userNN_ to *my_data-userNN-error* (2). Click the *Save* button at the bottom of the page.**
 
-    ![ocp-postgresql2](ocp-postgresql2.png)
+    ![ocp-postgresql2-new](ocp-postgresql2-new.png)
 
     Your NodeJS pod will shortly become unready as it is no longer able to find the correct Postgresql database. If at first it is still available, you likely need to wait a few more seconds.
 
@@ -37,15 +37,15 @@ IBM Cloud Pak for AIOps helps you **uncover hidden insights from multiple source
 
 ### Exploring the CP4AIOps Console
 
-1. **Navigate to your IBM Cloud Pak for AIOps dashboard at [https://cpd-cp4aiops.apps.x2pn.dmz/zen/#/homepage](https://cpd-cp4aiops.apps.x2pn.dmz/zen/#/homepage){target=wsc_cp4aiopsconsole}.** 
+1. **Navigate to your IBM Cloud Pak for AIOps dashboard at [https://cpd-cp4aiops.apps.ocpaocp.dmz/zen/#/homepage](https://cpd-cp4aiops.apps.ocpaocp.dmz/zen/#/homepage){target=wsc_cp4aiopsconsole}.** 
 
     Select _OpenShift Authentication_ from the _Log in with_ dropdown, then click the blue _Log in_ button.
 
     ![cp4waiops-login](cp4waiops-login.png)
 
-2.  **If presented with two choices in a _Log in with_ box, as shown below, select the `ldap-ats-wscdmz-wfwsldapcl01` option, and log in with your usual lab credentials (i.e. _userNN_).** 
+2.  **When presented with three choices in a _Log in with_ box, as shown below, select the *ldap-ats-wscdmz-wfwsldapcl01* option, and then log in with your usual lab credentials (i.e., _usernn_).** 
 
-    ![cp4aiops-login-ldap](cp4aiops-login-ldap.png)
+    ![cp4aiops-login-ldap2](cp4aiops-login-ldap2.png)
 
     You may be prompted to authorize access to a service account in the _cp4aiops_ project. Select **Allow selected permissions** if prompted.
 
@@ -226,21 +226,24 @@ IBM Cloud Pak for AIOps helps you **uncover hidden insights from multiple source
 
     This _runbook_ is made up of four separate _actions_. Each action is a bash command issued through an SSH connection. It is not required that all commands be of the same type. For example, one step could be a bash command while the second could be an Ansible playbook or an API call.
 
-    - First, the runbook will log into the OpenShift cluster from an Ubuntu server via an SSH connection.
-    - Second, it will check if the _POSTGRESQL_DATABASE_ environment variable is properly set.
-    - Third, it will remediate the error. The remediation for this error is to edit the Postgresql deployment's environment variable to the correct database name of _my_data_, rather than _my_data-error_.
-    - Finally, it will check the environment variable again to confirm that it was properly changed.
+    - In *Step 1* the runbook will log into the OpenShift cluster from a Linux server via an SSH connection. (In our lab environment, this server is running Red Hat Enterprise Linux (RHEL) in a Linux guest running under z/VM, although these details are transparent to you.)
+    - In *Step 2* it will check if the _POSTGRESQL_DATABASE_ environment variable is properly set.
+    - In *Step 3* it will remediate the error. The remediation for this error is to edit the Postgresql deployment's environment variable to the correct database name of _my_data-usernn_, rather than _my_data-usernn-error_.
+    - Finally, in *Step 4* it will check the environment variable again to confirm that it was properly changed.
+
 
 19. **Prior to running the actions, begin by entering four parameter values in the _Details_ pane on the right- those for _user_, _ocp_username_, _ocp_password_, and _ocp_project_.**
 
-    - user: `userNN` (where `NN` is your user number, same as `ocp_username`)
-    - ocp_username: `userNN` (where `NN` is your user number, same as `user`)
-    - ocp_password: your OpenShift password found on the [Environment Access](../access.md){target=wsc_envaccess} page (the same one you've been using throughout the labs).
-    - ocp_project: `userNN-project`
+    This table describes the six parameters used by the runbook, including the two you should not change and the four you need to change to provide values unique to you.
 
-    !!! Note
-  
-        There are six parameters being passed to the runbook, but two of them have been pre-filled for you and should not be changed.
+    | Parameter | Value | Comment | 
+    | --- | --- | --- |
+    | target | 192.168.176.61 | DO NOT CHANGE- this is the IP address of the server defined in the SSH integration |
+    | **user** | *usernn*, where *nn* is your unique number | a userid on the target server that can be a target of the SSH command |
+    | **$ocp_username** | *usernn*, same as the *user* parameter | the userid used to log in to OCP in the runbook, also used to construct the desired name of the environment variable to be corrected by the runbook |
+    | **$ocp_password** | your OpenShift password | found on the [Environment Access](../console-access.md){target=wsc_envaccess} page (the same one you've been using throughout the lab). |
+    | **$ocp_project** | *usernn-project*, where *nn* is your unique number | the runbook targets its OCP CLI commands to this project |
+    | $ocp_server | https://api.atsocpd1.dmz:6443 | DO NOT CHANGE- this is the URL for the OCP API server which receives the OCP CLI commands that the runbook invokes |
 
     Your screen should look like this after you have filled in the parameter values. 
 
@@ -262,9 +265,9 @@ IBM Cloud Pak for AIOps helps you **uncover hidden insights from multiple source
 
 21. **Click through each step in the runbook**, waiting for each step to show as **completed** before moving on..
 
-    If the output of step 4 includes the response _POSTGRESQL_DATABASE=my_data_, like in the screen shot below, then the application issue should be fixed.
+    If the output of step 4 includes the response _POSTGRESQL_DATABASE=my_data-userNN_, like in the screen shot below, then the application issue should be fixed.
 
-    ![runbook-complete](runbook-complete.png)
+    ![runbook-completeb](runbook-completeb.png)
 
     Since it is the last step in the Runbook, at the end of _Step 4: Check userNN postgresql environment variable_, you will have a _Complete_ button to click instead of a _Next Step_ button. 
 
@@ -294,15 +297,11 @@ Throughout this tutorial, you have been interacting with alerts, incidents, and 
 
     ![ai-model-management](ai-model-management.png)
 
-    This page allows you to train the pre-loaded AI models to hone their ability to derive insights from your incoming data connections (Instana in this tutorial). 
+    At the top of this page are models that you can set up to train with your own data, which is typically provided via your integrations. (Our lab system has Instana and ELK defined, although you only took advantage of the Instana integration in this lab.)
 
-    For example, the *Temporal grouping* AI model groups alerts which co-occur over time. When a problem arises, there are typically multiple parts of a system or environment that are impacted. When alerts in different areas co-occur, it makes sense to look at them together and treat them as one problem to try and determine what might have happened. This is one of the ways that noise is reduced from hundreds of thousands of events all the way down to a few hundred incidents.
+    The bottom of the page has some models that come pre-trained by IBM.
 
-24. **Click the "Temporal grouping" tile.**
-
-    ![temporal-grouping](temporal-grouping.png)
-
-    You can see the status and history of the AI model training as well as the applications that it is being applied to. Users with elevated credentials are able to manually kick off training to improve the AI model, as well as set up a schedule to automate training on a consistent basis.
+    If you click any of the tiles on this page, a pop-in panel from the right provides more information about that algorithm and the benefit it provides.
 
 ## Wrapping Up
 
@@ -312,7 +311,7 @@ With Instana, Turbonomic, and IBM Cloud Pak for AIOps, you can keep your applica
 
 <!-- With Instana and IBM Cloud Pak for AIOps, you can keep your applications up and running, meeting your SLAs, and when incidents do arise, you can remediate them quickly and get back to focusing on other projects. -->
 
-We encourage you to look through the references below and reach out to the [workshop owner](mailto:lsilliman@us.ibm.com) if you would like to see or learn more.
+We encourage you to look through the references below and reach out to the [workshop owner](mailto:silliman@us.ibm.com) if you would like to see or learn more.
 
 ## References
 

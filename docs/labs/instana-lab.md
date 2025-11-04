@@ -10,7 +10,15 @@ In this tutorial, you will become familiar with three of IBM's strategic AIOps s
 
 ## Connecting to the Lab Environment
 
-Connection instructions with platform URLs and credentials are listed on the [Environment Access Page](../access.md){target=wsc_envaccess}.
+It is assumed you have already signed into *IBM Technology Zone* and been assigned a Windows workstation lab environment and have logged into Windows.
+Visit the [TechZone Environment Access Page](../techzone-access.md){target=wsc_techzoneaccess} if you haven't done this yet.
+
+You were assigned a unique environment id, from 1 to 20.
+In the lab you will be accessing various consoles, and you must use _usernn_ where *nn* matches your environment id.
+(The *nn* in *usernn* is always two digits, so, e.g., if you have environment 2, then you will use *user02* throughout the lab, not *user2*.)
+
+Console URLs and credentials used in the lab are listed on the [Lab Consoles Access page](../console-access.md){target=wsc_envaccess}.
+You probably won't have to visit this page too often as all of the consoles that you will log into will use the same userid (your unique *usernn*) and password, but it won't hurt to keep it open in a browser tab.
 
 ## Exploring the Robot Shop Sample Application
 
@@ -21,7 +29,7 @@ Connection instructions with platform URLs and credentials are listed on the [En
 
 1. **Open the Red Hat OpenShift Container Platform web console** at [https://console-openshift-console.apps.atsocpd1.dmz](https://console-openshift-console.apps.atsocpd1.dmz){target=wsc_ocpconsole}
 
-    For your convenience, the above link is repeated on the [Environment Access Page](../access.md){target=wsc_envaccess}, in the *Links to platforms* section.
+    For your convenience, the above link is repeated on the [Lab Consoles Access Page](../console-access.md){target=wsc_envaccess}.
 
     !!! Note "A note on abbreviations"
 
@@ -35,7 +43,7 @@ Connection instructions with platform URLs and credentials are listed on the [En
 
     ![openshift-console-login](openshift-console-login.png)
 
-2. **Log in to OpenShift with your credentials.** Your userid will be *usernn* where *nn* is the unique number assigned to you, and your password will be in the table in the [Environment Access Page](../access.md/#openshift-instana-turbonomic-and-cp4aiops-credentials){target=wsc_envaccess}.
+2. **Log in to OpenShift with your credentials.** Your userid will be *usernn* where *nn* is the unique number assigned to you, and your password will be in the table in the [Lab Consoles Access Page](../console-access.md/){target=wsc_envaccess}.
 
 3. **Under the Developer perspective (1), navigate to the Topology page (2) for the `robot-shop` project (3).**  
 
@@ -190,6 +198,12 @@ Instana is an enterprise observability solution that offers application performa
 
 12. **Click the Platforms -> Kubernetes option in the left side menu.**
 
+    You should see a screen similar to below, which is called the *card* view.
+    You can toggle between *card* view and *list* view by clicking the widget highlighted (1) in the screen snippet:
+
+    ![instana-kubernetes](instana-kubernetes-card.png)
+
+13.  **Toggle to list view**
     You should see a screen similar to this:
 
     ![instana-kubernetes](instana-kubernetes.png)
@@ -202,7 +216,7 @@ Instana is an enterprise observability solution that offers application performa
 
         *instana* is the Instana server itself, which has been installed as a [Self-hosted Standard Edition single-node cluster](https://www.ibm.com/docs/en/instana-observability/current?topic=backend-installing-standard-edition){target=wsc_instanadoc} on a server with the *x86_64* architecture.
 
-13. **Click the _atsocpd1_  hyperlink in the _Names_ column.**
+13. **Click the _atsocpd1_  hyperlink in the _Name_ column.**
 
     You should see a screen that looks like this:
 
@@ -222,7 +236,7 @@ Instana is an enterprise observability solution that offers application performa
  
     An interesting thing to note on this screen is that by observing the *Monitored By Instana* column, you can see that only the *compute* nodes, and not the *control* nodes, are being monitored by an Instana agent.  This is because application workloads run only on compute nodes.
 
-15. **Click the _Namespace_ tab, then click on the maginifying glass icon and search for _robot-shop_ and select it.**.
+15. **Click the _Namespace_ tab, then click on the magnifying glass icon and search for _robot-shop_ and select it.**.
 
     !!! Tip
 
@@ -293,9 +307,9 @@ Instana is an enterprise observability solution that offers application performa
     
         At first glance it may seem difficult to distinguish between the opaque blocks within each pillar.  Magnifying the view may help, and you can also hover your cursor over a pillar and slowly move your cursor up or down the pillar to see information about each block.
 
-22. **In the Infrastructure search bar, enter `oracledb`.** Two pillars will be returned, representing two different Oracle Databases running on Linux on IBM Z. **Select the pillar for OracleDB @acmeair.**
+22. **In the Infrastructure search bar, enter `oracledb`.** A pillar will be returned, representing an Oracle Database running on Linux on IBM Z. **Select the pillar for OracleDB @acmeair.**
 
-    You should see something similar to this:
+    You should see something similar to this (but with only one pillar):
 
     ![infrastructure-oracledb](infrastructure-oracledb.png)
 

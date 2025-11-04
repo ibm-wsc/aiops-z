@@ -23,25 +23,21 @@ You configure managed environments as [Turbonomic targets](https://www.ibm.com/d
 
 1. **Log in to Turbonomic at [https://nginx-turbonomic.apps.x2pn.dmz/app/](https://nginx-turbonomic.apps.x2pn.dmz/app/){target=wsc_turboconsole}** 
 
-    This link is also available at the [Environment Access Page](../access.md){target=wsc_envaccess} file.
+    This link is also available at the [Lab Consoles Access Page](../console-access.md){target=wsc_envaccess}.
 
     Your _userNN_ lab userid has been granted the [_Advisor_ role](https://www.ibm.com/docs/en/tarm/8.15.3?topic=tasks-managing-user-accounts){target=wsc_turbodoc}. This means that you can see everything that Turbonomic is managing, but you cannot take actions against the target environments or modify the Turbonomic server itself. Users can be set up either locally on the Turbonomic server or with an authentication service such as an LDAP server. Users can have their access scoped to certain environments, applications, or specific entities on the Turbonomic server so that people can only access what they need to.
 
     Upon successful login, you should see a page like this:
 
-    ![turbo-supply-chain](turbo-supply-chain.png)
+    ![turbo-supply-chain-newUI](turbo-supply-chain-newUI.png)
 
     The first thing to notice is the supply chain on the left side of the page. This is the section with circles connected with arrrows. Turbonomic uses the concept of a supply chain made up of buyers and sellers all with the goal of meeting application resource demand. The supply chain shown on the homepage includes all the entities that Turbonomic identified based on deployment of the KubeTurbo operator on the OpenShift on IBM Z cluster. The relationships and interdependencies between each entity were automatically identified and provide an overview of how each object relates to one another. Because an OpenShift cluster is being monitored, you can see that application and cluster infrastructure components were found, including containers, namespaces, persistent volumes, and the single virtual machines running the OpenShift nodes. This is an interactable chart so you can click on any of the entity types to drill down directly from the homepage.
-
-    ![turbo-business-applications](turbo-business-applications.png)
 
     In the screenshot above, on the right side of the page, you can see there is a _Top Business Applications_ section. A Business Application in Turbonomic is defined as a group of related objects of your choosing. In the case of this installation, Business Applications are imported from the Instana Application Perspectives, as well as all the related entities that Turbonomic correlated with them, such as the virtual machine the pods are running on, the namespace (project) they're running in, the persistent volumes where they store data, and the Kubernetes cluster itself. This is one example of the integration between Instana and Turbonomic.
 
     Instana working alongside Turbonomic brings other benefits as well, such as letting Turbonomic see the application response times and transaction speeds and then using that data to scale pod counts up or down to meet defined Service-Level Objectives (SLOs) at minimal cost. Without Instana or another Application Performance Monitoring (APM) solution in place, you would not have any visibility into application response times or metrics, and this Turbonomic functionality would be inaccessible.
 
-    ![turbo-pending-actions-home](turbo-pending-actions-home.png)
-
-    Near the middle of the page, you will see a section titled "Pending Actions". These are all the actions that Turbonomic is recommending you take to make sure applications get the resources they need without over-provisioning. You will learn more about actions later in this tutorial.
+    Near the middle of the page, you should see a section titled "Pending Actions". These are all the actions that Turbonomic is recommending you take to make sure applications get the resources they need without over-provisioning. You will learn more about actions later in this tutorial.
 
 #### Search
 
@@ -51,17 +47,17 @@ You configure managed environments as [Turbonomic targets](https://www.ibm.com/d
 
 3.  **Select the Namespaces option in the list.**
 
-    ![turbo-search-namespaces](turbo-search-namespaces.png)
+    ![turbo-search-namespaces-newUI](turbo-search-namespaces-newUI.png)
 
     Next you will dig into the namespace that contains the Robot Shop sample application.
 
 4.  **Type `robot-shop` (1) in the Search field and then click on the _robot-shop_ link under the _Name_ column (2)**.
 
-    ![turbo-namespace-robotshop](turbo-namespace-robotshop.png)
+    ![turbo-namespace-robotshop-newUI](turbo-namespace-robotshop-newUI.png)
 
     You should see a page similar to the following:
 
-    ![turbo-search-namespaces-2](turbo-search-namespaces-2.png)
+    ![turbo-search-namespaces-2-newUI](turbo-search-namespaces-2-newUI.png)
 
     You now have a view that is scoped to only the components running in the robot-shop namespace, as well as any related components that those pods interact with, such as virtual machines, storage volumes, etc. You are provided all the actions against these components, the top services and workload controllers by CPU and memory for the robot-shop components, information about any quotas assigned to the project, and more. If you want to scope down an individual's access to a single application, only workloads in a specific datacenter, or a custom group of workloads and components you define, this is an example of what that could look like.
 
@@ -117,7 +113,7 @@ As you have seen, Turbonomic has suggested some pending actions related to some 
 
     !!! Tip
 
-        You may still have your OpenShift Web Console tab open from the Instana lab.  If not, you can find the URL again on the [Environment Access](../access.md){target=wsc_envaccess} page.
+        You may still have your OpenShift Web Console tab open from the Instana lab.  If not, you can find the URL again on the [Lab Consoles Access](../console-access.md){target=wsc_envaccess} page.
 
     ![usernn-resource-limits](usernn-resource-limits.png)
 
@@ -127,7 +123,7 @@ As you have seen, Turbonomic has suggested some pending actions related to some 
 
     The defaults for the NodeJS application have been intentionally set to be very low, in order to generate recommended actions in Turbonomic.
 
-6.  **In the Turbonomic console, log out of your _userNN_ username using the button in the bottom-left corner of the menu.**
+6.  **In the Turbonomic console, log out of your _userNN_ username using the Logout icon in the upper-right corner of the screen.**
     
 7.  **Log back in to Turbonomic with the userid _userNN-actions_ and the same password that you've been using for _userNN_.**
 
@@ -139,7 +135,7 @@ As you have seen, Turbonomic has suggested some pending actions related to some 
 
 9.  **Click the _Scaling Actions_ link in the _Pending Actions_ section, just to the right of the supply chain chart.**
 
-    ![turbo-scaling-actions](turbo-scaling-actions.png)
+    ![turbo-scaling-actions-newUI](turbo-scaling-actions-newUI.png)
 
     The action(s) here are related to the microservices in the _userNN-project_. You should see an action related to the memory resizing for the NodeJS frontend application .
 
@@ -147,25 +143,23 @@ As you have seen, Turbonomic has suggested some pending actions related to some 
 
         The lab is designed for you to work with the memory resizing action against the _nodejs-userNN_ application.  If there are other scaling actions, you may ignore those.  If the memory resizing action for _nodejs-userNN_ also includes a CPU resizing action, that's fine too as it won't impact the lab instructions.
 
-10. **Click the details button to far right of the _nodejs-userNN_ action to show details about the proposed action.**
+10. **For the action with _nodejs-userNN_ in the _Workload controller name_ column, click the icon button in the *Action* column, which will show details about the proposed action.**
 
-    ![turbo-scaling-actions-2](turbo-scaling-actions-2.png)
+    ![turbo-scaling-actions-2-newUI](turbo-scaling-actions-2-newUI.png)
 
-    Here you see more details about exactly what Turbonomic is recommending you do via the action. It wants to resize the memory limits for the pod, and you can see the result that Turbonomic expects in terms of resource utilization as a percentage of changing the memory limits. In the screen snippet below Turbonomic expects to go from using 100% of the memory limit to 38.46% of the memory limit. The percentages shown to you may vary slightly from the 100% and 38.46% shown in the screen snippet.
+    Here you see more details about exactly what Turbonomic is recommending you do via the action. It wants to resize the memory limits for the pod. Scroll down through the details and near the bottom you can see the result that Turbonomic expects in terms of resource utilization percentage by changing the memory limits. In the screen snippet below Turbonomic expects to go from using 99% of the memory limit to 38.08% of the memory limit. The percentages shown to you may vary slightly from the 99% and 38.08% shown in the screen snippet.
 
-    ![turbo-scaling-actions-3](turbo-scaling-actions-3.png)
+    ![turbo-scaling-actions-3-newUI](turbo-scaling-actions-3-newUI.png)
 
     Because this is a manual action (rather than automatic), you are provided with a button in the user interface to directly execute the action and make the proposed changes. Because you are logged in with credentials scoped to this namespace, you can execute the action. If you were logged in with your _userNN_ userid with the Advisor role, you would not be able to execute the action.
 
-11. **Click the green _Execute Action_ button.**
+11. **Click the blue _Execute action_ button.**.  If you receive a confirmation dialog similar to below, click the blue _Execute Now_ button.
 
-    Turbonomic will apply the recommended changes to the NodeJS application running on OpenShift. You can see the executed action in the _userNN-project_ business application "All actions" panel. **Tip:** You may need to scroll to the bottom of the `userNN-project` business application page in order to see the "All actions" panel.
+    ![turbo-execute-action-confirm](turbo-execute-action-confirm.png)
 
-    !!! Tip
+    Turbonomic will apply the recommended changes to the NodeJS application running on OpenShift. You should see *Succeeded* in the *Status* indicating that the action was succeessful.
 
-        After clicking your _userNN-project_ in the _Top Business Applications_ list, you may need to scroll to the bottom of the page in order to see the "All actions" panel.  If you still do not see your completed action, you may need to click the _Show All_ button and page through the table to see your completed action.  Ask an instructor for help if you have trouble finding your completed action.
-
-    ![executed-actions](executed-actions.png)
+    ![turbo-action-success](turbo-action-success.png)
 
 12. **In the OpenShift console, navigate back to the _nodejs-userNN_ resource limits to see the new values.** You should notice that the new memory limit is 208MB instead of the value of 80MB that it was set to before you executed the Turbonomic action. You may already be in the right place in your OpenShift Web Console, but if not, refer to step 1 in this section if you need a refresher on how to find this information, or ask an instructor for help.
 
