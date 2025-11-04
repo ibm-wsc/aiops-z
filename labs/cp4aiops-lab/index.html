@@ -254,12 +254,56 @@
   
   
     <li class="md-nav__item">
-      <a href="../../access/" class="md-nav__link">
+      <a href="../../aiops-z_03-20-25.pdf" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Environment Access
+    Presentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../techzone-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TechZone Environment Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../console-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Consoles Access
     
   </span>
   
@@ -281,29 +325,7 @@
   
   
   <span class="md-ellipsis">
-    Lab Architecture
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../aiops-z_03-20-25.pdf" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Presentation
+    Lab Environment
     
   </span>
   
@@ -330,10 +352,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -346,8 +368,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Labs
           </label>
@@ -787,13 +809,13 @@
 <p><strong>In the OpenShift console, under the developer perspective, navigate to your <em>userNN-project</em> namespace topology (1), click the Postgresql icon (2), and then click the <em>postgresql-userNN</em> deployment hyperlink (3).</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You may still have your OpenShift Web Console tab open from the Instana or Turbonomic labs.  If not, you can find the URL again on the <a href="../../access/" target="wsc_envaccess">Environment Access</a> page.</p>
+<p>You may still have your OpenShift Web Console tab open from the Instana or Turbonomic labs.  If not, you can find the URL again on the <a href="../../console-access/" target="wsc_envaccess">Lab Consoles Access</a> page.</p>
 </div>
 <p><img alt="ocp-postgresql" src="../../images/ocp-postgresql.png" /></p>
 </li>
 <li>
-<p><strong>Under the <em>Environment</em> tab (1), change the value for <em>POSTGRESQL_DATABASE</em> from <em>my_data</em> to <em>my_data-error</em> (2). Click save at the bottom of the page.</strong></p>
-<p><img alt="ocp-postgresql2" src="../../images/ocp-postgresql2.png" /></p>
+<p><strong>Under the <em>Environment</em> tab (1), change the value for <em>POSTGRESQL_DATABASE</em> from <em>my_data-userNN</em> to <em>my_data-userNN-error</em> (2). Click the <em>Save</em> button at the bottom of the page.</strong></p>
+<p><img alt="ocp-postgresql2-new" src="../../images/ocp-postgresql2-new.png" /></p>
 <p>Your NodeJS pod will shortly become unready as it is no longer able to find the correct Postgresql database. If at first it is still available, you likely need to wait a few more seconds.</p>
 </li>
 <li>
@@ -810,13 +832,13 @@
 <h3 id="exploring-the-cp4aiops-console">Exploring the CP4AIOps Console<a class="headerlink" href="#exploring-the-cp4aiops-console" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p><strong>Navigate to your IBM Cloud Pak for AIOps dashboard at <a href="https://cpd-cp4aiops.apps.x2pn.dmz/zen/#/homepage" target="wsc_cp4aiopsconsole">https://cpd-cp4aiops.apps.x2pn.dmz/zen/#/homepage</a>.</strong> </p>
+<p><strong>Navigate to your IBM Cloud Pak for AIOps dashboard at <a href="https://cpd-cp4aiops.apps.ocpaocp.dmz/zen/#/homepage" target="wsc_cp4aiopsconsole">https://cpd-cp4aiops.apps.ocpaocp.dmz/zen/#/homepage</a>.</strong> </p>
 <p>Select <em>OpenShift Authentication</em> from the <em>Log in with</em> dropdown, then click the blue <em>Log in</em> button.</p>
 <p><img alt="cp4waiops-login" src="../../images/cp4waiops-login.png" /></p>
 </li>
 <li>
-<p><strong>If presented with two choices in a <em>Log in with</em> box, as shown below, select the <code>ldap-ats-wscdmz-wfwsldapcl01</code> option, and log in with your usual lab credentials (i.e. <em>userNN</em>).</strong> </p>
-<p><img alt="cp4aiops-login-ldap" src="../../images/cp4aiops-login-ldap.png" /></p>
+<p><strong>When presented with three choices in a <em>Log in with</em> box, as shown below, select the <em>ldap-ats-wscdmz-wfwsldapcl01</em> option, and then log in with your usual lab credentials (i.e., <em>usernn</em>).</strong> </p>
+<p><img alt="cp4aiops-login-ldap2" src="../../images/cp4aiops-login-ldap2.png" /></p>
 <p>You may be prompted to authorize access to a service account in the <em>cp4aiops</em> project. Select <strong>Allow selected permissions</strong> if prompted.</p>
 <p>While navigating the CP4AIOps platform, you might be prompted to take a tour of certain features. Select "Maybe Later" - you can come back to these tours later if you wish by clicking the "Tours" button in the top-right of the page.</p>
 <p>After successful login, and dismissing any offers to take a tour, you should be at your CP4AIOps home page, which should look like this:</p>
@@ -960,24 +982,56 @@
 <p><img alt="runbook-new" src="../../images/runbook-new.png" /></p>
 <p>This <em>runbook</em> is made up of four separate <em>actions</em>. Each action is a bash command issued through an SSH connection. It is not required that all commands be of the same type. For example, one step could be a bash command while the second could be an Ansible playbook or an API call.</p>
 <ul>
-<li>First, the runbook will log into the OpenShift cluster from an Ubuntu server via an SSH connection.</li>
-<li>Second, it will check if the <em>POSTGRESQL_DATABASE</em> environment variable is properly set.</li>
-<li>Third, it will remediate the error. The remediation for this error is to edit the Postgresql deployment's environment variable to the correct database name of <em>my_data</em>, rather than <em>my_data-error</em>.</li>
-<li>Finally, it will check the environment variable again to confirm that it was properly changed.</li>
+<li>In <em>Step 1</em> the runbook will log into the OpenShift cluster from a Linux server via an SSH connection. (In our lab environment, this server is running Red Hat Enterprise Linux (RHEL) in a Linux guest running under z/VM, although these details are transparent to you.)</li>
+<li>In <em>Step 2</em> it will check if the <em>POSTGRESQL_DATABASE</em> environment variable is properly set.</li>
+<li>In <em>Step 3</em> it will remediate the error. The remediation for this error is to edit the Postgresql deployment's environment variable to the correct database name of <em>my_data-usernn</em>, rather than <em>my_data-usernn-error</em>.</li>
+<li>Finally, in <em>Step 4</em> it will check the environment variable again to confirm that it was properly changed.</li>
 </ul>
 </li>
 <li>
 <p><strong>Prior to running the actions, begin by entering four parameter values in the <em>Details</em> pane on the right- those for <em>user</em>, <em>ocp_username</em>, <em>ocp_password</em>, and <em>ocp_project</em>.</strong></p>
-<ul>
-<li>user: <code>userNN</code> (where <code>NN</code> is your user number, same as <code>ocp_username</code>)</li>
-<li>ocp_username: <code>userNN</code> (where <code>NN</code> is your user number, same as <code>user</code>)</li>
-<li>ocp_password: your OpenShift password found on the <a href="../../access/" target="wsc_envaccess">Environment Access</a> page (the same one you've been using throughout the labs).</li>
-<li>ocp_project: <code>userNN-project</code></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There are six parameters being passed to the runbook, but two of them have been pre-filled for you and should not be changed.</p>
-</div>
+<p>This table describes the six parameters used by the runbook, including the two you should not change and the four you need to change to provide values unique to you.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>192.168.176.61</td>
+<td>DO NOT CHANGE- this is the IP address of the server defined in the SSH integration</td>
+</tr>
+<tr>
+<td><strong>user</strong></td>
+<td><em>usernn</em>, where <em>nn</em> is your unique number</td>
+<td>a userid on the target server that can be a target of the SSH command</td>
+</tr>
+<tr>
+<td><strong>$ocp_username</strong></td>
+<td><em>usernn</em>, same as the <em>user</em> parameter</td>
+<td>the userid used to log in to OCP in the runbook, also used to construct the desired name of the environment variable to be corrected by the runbook</td>
+</tr>
+<tr>
+<td><strong>$ocp_password</strong></td>
+<td>your OpenShift password</td>
+<td>found on the <a href="../../console-access/" target="wsc_envaccess">Environment Access</a> page (the same one you've been using throughout the lab).</td>
+</tr>
+<tr>
+<td><strong>$ocp_project</strong></td>
+<td><em>usernn-project</em>, where <em>nn</em> is your unique number</td>
+<td>the runbook targets its OCP CLI commands to this project</td>
+</tr>
+<tr>
+<td>$ocp_server</td>
+<td><a href="https://api.atsocpd1.dmz:6443">https://api.atsocpd1.dmz:6443</a></td>
+<td>DO NOT CHANGE- this is the URL for the OCP API server which receives the OCP CLI commands that the runbook invokes</td>
+</tr>
+</tbody>
+</table>
 <p>Your screen should look like this after you have filled in the parameter values. </p>
 <p><img alt="cp4aiops-runbook-parameters" src="../../images/cp4aiops-runbook-parameters.png" /></p>
 </li>
@@ -996,8 +1050,8 @@
 </li>
 <li>
 <p><strong>Click through each step in the runbook</strong>, waiting for each step to show as <strong>completed</strong> before moving on..</p>
-<p>If the output of step 4 includes the response <em>POSTGRESQL_DATABASE=my_data</em>, like in the screen shot below, then the application issue should be fixed.</p>
-<p><img alt="runbook-complete" src="../../images/runbook-complete.png" /></p>
+<p>If the output of step 4 includes the response <em>POSTGRESQL_DATABASE=my_data-userNN</em>, like in the screen shot below, then the application issue should be fixed.</p>
+<p><img alt="runbook-completeb" src="../../images/runbook-completeb.png" /></p>
 <p>Since it is the last step in the Runbook, at the end of <em>Step 4: Check userNN postgresql environment variable</em>, you will have a <em>Complete</em> button to click instead of a <em>Next Step</em> button. </p>
 <p>You can give the runbook a 1-5 star rating, leave a comment, and mark that it worked. This will provide feedback to the automation engineers and AI algorithms so that runbooks can continue to improve.</p>
 </li>
@@ -1018,13 +1072,9 @@
 <li>
 <p><strong>From the left-side menu, navigate to Operate -&gt; AI Model Management.</strong></p>
 <p><img alt="ai-model-management" src="../../images/ai-model-management.png" /></p>
-<p>This page allows you to train the pre-loaded AI models to hone their ability to derive insights from your incoming data connections (Instana in this tutorial). </p>
-<p>For example, the <em>Temporal grouping</em> AI model groups alerts which co-occur over time. When a problem arises, there are typically multiple parts of a system or environment that are impacted. When alerts in different areas co-occur, it makes sense to look at them together and treat them as one problem to try and determine what might have happened. This is one of the ways that noise is reduced from hundreds of thousands of events all the way down to a few hundred incidents.</p>
-</li>
-<li>
-<p><strong>Click the "Temporal grouping" tile.</strong></p>
-<p><img alt="temporal-grouping" src="../../images/temporal-grouping.png" /></p>
-<p>You can see the status and history of the AI model training as well as the applications that it is being applied to. Users with elevated credentials are able to manually kick off training to improve the AI model, as well as set up a schedule to automate training on a consistent basis.</p>
+<p>At the top of this page are models that you can set up to train with your own data, which is typically provided via your integrations. (Our lab system has Instana and ELK defined, although you only took advantage of the Instana integration in this lab.)</p>
+<p>The bottom of the page has some models that come pre-trained by IBM.</p>
+<p>If you click any of the tiles on this page, a pop-in panel from the right provides more information about that algorithm and the benefit it provides.</p>
 </li>
 </ol>
 <h2 id="wrapping-up">Wrapping Up<a class="headerlink" href="#wrapping-up" title="Permanent link">&para;</a></h2>
@@ -1032,7 +1082,7 @@
 <p>With Instana, Turbonomic, and IBM Cloud Pak for AIOps, you can keep your applications up and running, meeting your SLAs, and when incidents do arise, you can remediate them quickly and get back to focusing on other projects.</p>
 <!-- With Instana and IBM Cloud Pak for AIOps, you can keep your applications up and running, meeting your SLAs, and when incidents do arise, you can remediate them quickly and get back to focusing on other projects. -->
 
-<p>We encourage you to look through the references below and reach out to the <a href="mailto:lsilliman@us.ibm.com">workshop owner</a> if you would like to see or learn more.</p>
+<p>We encourage you to look through the references below and reach out to the <a href="mailto:silliman@us.ibm.com">workshop owner</a> if you would like to see or learn more.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.ibm.com/products/cloud-pak-for-aiops" target="wsc_cp4aiopsdoc">IBM Cloud Pak for AIOps Product Page</a></li>

@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/</loc>
-         <lastmod>2025-08-06</lastmod>
+         <lastmod>2025-11-04</lastmod>
     </url>
     <url>
-         <loc>https://ibm-wsc.github.io/aiops-z/access/</loc>
-         <lastmod>2025-08-06</lastmod>
+         <loc>https://ibm-wsc.github.io/aiops-z/console-access/</loc>
+         <lastmod>2025-11-04</lastmod>
+    </url>
+    <url>
+         <loc>https://ibm-wsc.github.io/aiops-z/techzone-access/</loc>
+         <lastmod>2025-11-04</lastmod>
     </url>
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/workshop-architecture/</loc>
-         <lastmod>2025-08-06</lastmod>
+         <lastmod>2025-11-04</lastmod>
     </url>
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/labs/cp4aiops-lab/</loc>
-         <lastmod>2025-08-06</lastmod>
+         <lastmod>2025-11-04</lastmod>
     </url>
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/labs/instana-lab/</loc>
-         <lastmod>2025-08-06</lastmod>
+         <lastmod>2025-11-04</lastmod>
     </url>
     <url>
          <loc>https://ibm-wsc.github.io/aiops-z/labs/turbonomic-lab/</loc>
-         <lastmod>2025-08-06</lastmod>
+         <lastmod>2025-11-04</lastmod>
     </url>
 </urlset>
